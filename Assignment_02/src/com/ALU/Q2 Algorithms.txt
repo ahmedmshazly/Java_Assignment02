@@ -1,0 +1,35 @@
+Note that this text doesn't contain any explanations related to the code and how it works, otherwise it contains an explanation to the algorithms and the way of thinking that we used to make that program So, here are the steps: - 
+
+First) We found that we first need to get a random number that the user can guess, so that we make it fair for all of them
+
+Second) We found that as long as the random number and the guessed number maybe positive or negative, we saw that this may cause some wrong output when it comes to defining weather the guessed number is small/large or too small/large or extra small/large.
+For example: - if the number = -30 and the guessed number = 30, then the difference between them will 
+equal to zero, which is not the same original difference/distance = 60.
+
+Third) To solve the last problem, we drew a table with all the possible incomes and all the possible shapes that we can get the random number in, as the following: 
+N = the random number 
+G = the guessed number
+	The conditions	                        The action
+No.	   N               G	       N ><= g	Difference =
+1	Positive	Positive	N > G	N - G
+2	Positive	Positive	N < G	G - N
+3	Positive	Negative	N > G	N – G
+4	Positive	Negative	N < G	Not possible/Logical
+5	Negative	Positive	N > G	Not possible/Logical
+6	Negative	Positive	N < G	G - N
+7	Negative	Negative	N > G	- G + N
+8	Negative	Negative	N < G	- N + G
+
+Then we put every one of those valid possibilities under one if condition (each one is under an elif conditio) all under a while loop, so that it can detect which condition is the program reading in the moment, and get the difference/distance between the two numbers correctly, and once the user gets the right number, it will finish the loop after congratulations. 
+
+Fourth) After that we have defined the following:
+-	A small/large number is when the difference is between 1 and 10. \
+-	A too small/large number is when the difference is between 11 and 50.
+-	An extra small/large number is when the difference is between 51 and 100. 
+-	 “You aren’t even near” is when the difference is > 100
+
+Fifth) We have put that in each of the if/elif conditions we have mentioned in the above table. 
+
+Sixth) We have opened the while loop where it says x == 0, so that when we get the right answer, and we print the number of guesses the person tried, we say that x == -1 so that it finishes the loop and goes to the else condition of the loop which will print thank you.
+
+Seventh) We have identified “y” variable for counting the number of guesses and put it in each of the if conditions mentioned in the above table. We then print it when the person gets the right number.
